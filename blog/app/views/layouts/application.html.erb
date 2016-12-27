@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Comer, Beber y Conocer</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
     <%= csrf_meta_tags %>
@@ -10,29 +10,7 @@
   </head>
 
   <body>
-      <header>
-          <nav class="be-red white large-padding">
-              <ul class="no-list row center-xs middle-xs">
-                  <li class="col-md">
-                      <h1 class="no-margin" id="logo">Logo</h1
-                  </li>
-                  <li class="col-md">
-                      <%= link_to "Inicio", root_path %>
-                  </li>
-                  <li class="col-md">
-                      Favoritos
-                  </li>
-                  <li class="col-md">
-                      Malos
-                  </li>
-                  <% if user_signed_in? %>
-                      <li class="col-md">
-                          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
-                      </li>
-                  <%end%>
-              </ul>
-          </nav>
-      </header>
+      <%= render "partials/navigation" %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 

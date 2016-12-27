@@ -50,11 +50,7 @@ a,a:visited{
     padding: 0.2px 5px;
 }
 
-.top-space{
-    margin-top: 1em;
-}
-
-.field{
+.field, .top-space, .actions{
     margin-top: 1em;
 }
 
@@ -66,4 +62,8 @@ a,a:visited{
     display: block;
     padding: 10px 0px;
     font-size: 1.2em;
+}
+
+.text-left{
+    text-align: left;
 }
