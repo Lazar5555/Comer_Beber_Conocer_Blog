@@ -1,4 +1,10 @@
 class ArticlesController < ApplicationController
+    #Un callback creado por nosostros
+    #before_action :validate_user, except: [:show, :index]
+
+    #callback de devise
+    before_action :authenticate_user!, except: [:show, :index]
+    before_action :set_article, except: [:index, :new, :create]
     #GET /articles
     def index
         @articles = Article.all
@@ -6,7 +12,7 @@ class ArticlesController < ApplicationController
 
     #GET articles/:id
     def show
-        @article = Article.find(params[:id])
+        @article.update_visits_count
     end
 
     #GET articles/new
@@ -15,12 +21,12 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        @article = Article.find(params[:id])
+
     end
 
     #POST /articles
     def create
-        
+
         @article = current_user.articles.new(article_params)
 
         if @article.save
@@ -32,14 +38,12 @@ class ArticlesController < ApplicationController
 
     #
     def destroy
-        @article = Article.find(params[:id])
         @article.destroy
         redirect_to articles_path
     end
 
     #PUT articles/:id
     def update
-        @article = Article.find(params[:id])
         if @article.update(article_params)
             redirect_to @article
         else
@@ -51,4 +55,13 @@ class ArticlesController < ApplicationController
     def article_params
         params.require(:article).permit(:title, :body)
     end
+
+    def set_article
+        @article = Article.find(params[:id])
+    end
+
+    #Función para nuestro callback
+    #def validate_user
+    #    redirect_to new_user_session_path, notice: "Necesitas iniciar sesión"
+    #end
 end
