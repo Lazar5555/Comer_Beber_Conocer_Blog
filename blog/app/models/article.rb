@@ -3,6 +3,7 @@ class Article < ApplicationRecord
     #Se autogeneran los métodos: articlies.title()
 
     belongs_to :user
+    has_many :comments
     validates :title, presence: true, uniqueness: true
     validates :body, presence: true, length: {minimum: 20}
     #validates :username, format: { with /regex/} Validar cone expresiones regulares.
