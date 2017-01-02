@@ -1,7 +1,11 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
+  before_action :set_comment, only: [:update, :destroy, :show]
   before_action :set_article
   before_action :authenticate_user!
+
+  def show
+
+  end
 
   # POST /comments
   # POST /comments.json
@@ -12,7 +16,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment.article, notice: 'Comentario creado correctamente.' }
-        format.js
         format.json { render :show, status: :created, location: @comment.article }
       else
         format.html { render :new }
