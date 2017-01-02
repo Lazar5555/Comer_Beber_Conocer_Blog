@@ -5,6 +5,10 @@
     <p>
 <%end%>
 
+<div class="fiel">
+    <%= image_tag @article.cover.url(:thumb) %>
+</div>
+
 <p>
     Visitas: <%= @article.visits_count %>
 <p>
