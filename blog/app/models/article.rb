@@ -2,13 +2,14 @@ class Article < ApplicationRecord
 
     belongs_to :user
     has_many :comments
+    has_many :has_categories
+    has_many :categories, through: :has_categories
 
-    attr_reader :categories
+    #attr_reader :categories
 
     validates :title, presence: true, uniqueness: true
     validates :body, presence: true, length: {minimum: 20}
     #validates :username, format: { with /regex/} Validar cone expresiones regulares.
-
     before_create :set_visits_count
     after_create :save_categories
 
