@@ -19,7 +19,7 @@ class Article < ApplicationRecord
 
     scope :publicados, ->{ where(state: "pulished") }
 
-    scope :ultimos, ->{ order("created_at DESC").limit(10) }
+    scope :ultimos, ->{ order("created_at DESC") }
 
     def self.publicados
         Article.where(state: "published")
