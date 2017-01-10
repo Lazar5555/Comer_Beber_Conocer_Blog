@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/GioRosales/epic-editor-rails.git
+  revision: 4f676d9cd50aea2804659b9b1ae727cd8a2231ab
+  specs:
+    epic-editor-rails (0.2.4)
+      railties (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +193,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.2)
+  epic-editor-rails!
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
