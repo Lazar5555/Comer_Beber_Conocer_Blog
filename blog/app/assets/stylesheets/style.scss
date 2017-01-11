@@ -1,3 +1,4 @@
+
 html,body{
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
@@ -30,6 +31,10 @@ a,a:visited{
     margin: 0px;
 }
 
+.white{
+    color: white;
+}
+
 .red-letters{
     color: rgb(200, 50, 50);
 }
@@ -46,16 +51,37 @@ a,a:visited{
     background-color: rgb(17, 58, 82);
 }
 
-.white{
-    color: white;
-}
-
 .large-padding{
     padding: 0.2px 5px;
 }
 
 .field, .top-space, .actions{
     margin-top: 1em;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.centrar-vertical{
+    vertical-align: middle;
+}
+
+.background-cover{
+    background-position: center;
+    background-size: cover;
+}
+
+.article-height{
+    height: 200px;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
 }
 
 .form-control{
@@ -70,4 +96,10 @@ a,a:visited{
 
 .text-left{
     text-align: left;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

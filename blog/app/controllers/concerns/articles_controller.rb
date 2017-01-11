@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 
     #GET /articles
     def index
-        @articles = Article.paginate(page: params[:page], per_page: 5).ultimos
+        @articles = Article.paginate(page: params[:page], per_page: 6).ultimos
     end
 
     #GET articles/:id
