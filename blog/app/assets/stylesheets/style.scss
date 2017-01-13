@@ -31,16 +31,24 @@ a,a:visited{
     margin: 0px;
 }
 
+.be-big{
+    font-size: 2em;
+}
+
 .white{
     color: white;
 }
 
 .red-letters{
-    color: rgb(200, 50, 50);
+    color: rgb(200, 50, 50) !important;
 }
 
 .blue-letters{
     color: blue !important;
+}
+
+.gray-letters{
+    color: #616161;
 }
 
 .be-red{
@@ -102,4 +110,24 @@ a,a:visited{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bottom-space{
+    margin-bottom: 2em;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.be-small{
+    font-size: 12px;
+}
+
+.uderline{
+    text-decoration: underline;
+}
+
+.text-justify{
+    text-align: justify;
 }
