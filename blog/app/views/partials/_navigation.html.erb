@@ -2,11 +2,13 @@
     <nav class="be-red white large-padding">
         <ul class="no-list row center-xs middle-xs">
             <li class="col-md">
-                <h1 class="no-margin" id="logo"><%= link_to "Inicio", root_path %></h1
+                <%= link_to root_path do %>
+                    <%= image_tag("ic_home_white_18dp_2x.png", style:"margin-bottom:-10px; margin-top: -5px;") %>
+                <%end%>
             </li>
 
             <li class="col-md">
-                <%= link_to "Artículos", articles_path %>
+                <%= link_to "TODOS", articles_path %>
             </li>
 
             <% @categories.each do |category| %>
