@@ -1,34 +1,36 @@
-<div class="row center-xs">
-    <div class="col-xs-8 col-md-6">
-        <div class="box text-left">
-            <h2>Iniciar sesión</h2>
+<body class="normal_background">
+    <div class="row center-xs" style="margin-top:5em;">
+        <div class="col-xs-8 col-md-7">
+            <div class="box text-left font-Antic">
+                <h2 class="font-Antic big-font">Iniciar sesión</h2>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="field">
-                <%= f.label :email, "Correo electrónico" %><br />
-                <%= f.email_field :email, autofocus: true, class: "form-control" %>
-              </div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="field medium-font">
+                    <%= f.label :email, "Correo electrónico", class:"font-Antic" %><br />
+                    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                    </div>
 
-              <div class="field">
-                <%= f.label :password, "Contraseña" %><br />
-                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-              </div>
+                    <div class="field medium-font">
+                    <%= f.label :password, "Contraseña", class:"font-Antic" %><br />
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                    </div>
 
-              <% if devise_mapping.rememberable? -%>
-                <div class="field">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me, "Recordarme" %>
+                    <% if devise_mapping.rememberable? -%>
+                    <div class="field medium-font">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me, "Recordarme" %>
+                    </div>
+                    <% end -%>
+
+                    <div class="actions medium-font">
+                    <%= f.submit "Ingresar", class: "btn be-red white-letters" %>
+                    </div>
+                <% end %>
+
+                <div class="actions">
+                    <%= render "devise/shared/links" %>
                 </div>
-              <% end -%>
-
-              <div class="actions">
-                <%= f.submit "Ingresar", class: "btn be-red white" %>
-              </div>
-            <% end %>
-
-            <div class="actions">
-                <%= render "devise/shared/links" %>
             </div>
         </div>
     </div>
-</div>
+</body>

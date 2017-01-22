@@ -1,24 +1,24 @@
 <header>
-    <nav class="be-red white large-padding">
+    <nav class="be-red white-letters large-padding nav-font">
         <ul class="no-list row center-xs middle-xs">
-            <li class="col-md">
+            <li class="col-md nav-space">
                 <%= link_to root_path do %>
-                    <%= image_tag("ic_home_white_18dp_2x.png", style:"margin-bottom:-10px; margin-top: -5px;") %>
+                    <%= image_tag("ic_home_white_18dp_2x.png") %><!-- , style:"margin-bottom:-10px; margin-top: -5px;"-->
                 <%end%>
             </li>
 
-            <li class="col-md">
+            <li class="col-md nav-space">
                 <%= link_to "TODOS", articles_path %>
             </li>
 
             <% @categories.each do |category| %>
-                <li class="col-md">
+                <li class="col-md nav-space">
                     <%= link_to category.name, category %>
                 </li>
             <%end%>
 
             <% if user_signed_in? %>
-                <li class="col-md">
+                <li class="col-md nav-space">
                     <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
                 </li>
             <%end%>
