@@ -1,0 +1,12 @@
+es:
+    activerecord:
+        errors:
+            models:
+                article:
+                    messages:
+                        not_saved:
+                            one: "¡Ha ocurrido un error!"
+                            other: "Han ocurrido %{count} errores:"
+                    attributes:
+                        title:
+                            #blank: "El Título no puede estar en blanco."

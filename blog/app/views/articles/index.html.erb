@@ -1,10 +1,12 @@
-<div class="container" style="margin: 0 auto;">
-    <h1>Artículos</h1>
-    <div class="row">
-        <%= render @articles %>
-    </div>
+<body class="normal_background">
+  <div class="container" style="margin: 0 auto;">
+      <h1 class="text-center font-lemonade" style="font-size: 70px; color:#b71c1c;">Artículos</h1>
+      <div class="row">
+          <%= render @articles %>
+      </div>
 
-    <div class="top-space text-center">
-        <%= will_paginate @articles, :previous_label => 'Anterior...', :next_label => '...Siguiente' %>
-    </div>
-</div>
+      <div class="top-space text-center">
+          <%= will_paginate @articles, :previous_label => 'Anterior...', :next_label => '...Siguiente' %>
+      </div>
+  </div>
+</body>

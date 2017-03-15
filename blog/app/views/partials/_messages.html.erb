@@ -1,10 +1,17 @@
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %> fade in" style="margin: 0px auto;">
-        <a href="#" data-dismiss="alert" class="close" aria-label="close">&times;</a>
+        <a href="#" data-dismiss="alert" class="close">&times;</a>
         <ul>
-            <li>
-                <%= value %>
-            </li>
+            <%= value %>
+            <% if value.include? "Invalid Email or password." %>
+                <li><strong>Email o contraseña invalidos.</strong></li>
+            <% elsif value.include? "Signed in successfully." %>
+                <li><strong>Iniciaste sesión correctamente.</strong></li>
+            <% elsif value.include? "Signed out successfully." %>
+                <li><strong>Cerraste sesión correctamente.</strong></li>
+            <% elsif value.include? "You need to sign in or sign up before continuing." %>
+              <li><strong>Necesitas iniciar sesión antes de continuar.</strong></li>
+            <%end%>
         </ul>
     </div>
 <%end%>

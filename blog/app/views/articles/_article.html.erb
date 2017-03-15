@@ -1,18 +1,19 @@
 <div class="col-md-4 top-space">
-    <div class="Aligner box relative article-height">
+  <div class="Aligner box relative article-height div-box">
+      <%= link_to article, :action => 'go' do %>
         <div class="absolute article-height background-cover" style="background:url(<%= article.cover.url(:thumb) %>); top: 0px; left: 0px; width: 100%;">
-            <%= article.cover.url(:thumb) %>    
-        </div>
-
-        <div class="absolute article-height background-cover" style="background:rgba(0, 0, 0, 0.5); top: 0px; left: 0px; width: 100%;">
 
         </div>
+      <%end%>
 
-        <div class="relative white text-center">
-            <h2><%= link_to article.title, article %></h2>
-            <p>
-                <%= truncate(article.body, length: 70)%>
-            </p>
+      <%= link_to article, :action => 'go' do %>
+        <div class="absolute article-height background-cover" style="background:rgba(191, 22, 22, 0.1); top: 0px; left: 0px; width: 100%;">
+
         </div>
-    </div>
+      <% end %>
+
+      <div id="text-in-box" class="relative red-letters text-center font-lemonade">
+          <h2 class="text-articles"><%= link_to article.title, article %></h2>
+      </div>
+  </div>
 </div>

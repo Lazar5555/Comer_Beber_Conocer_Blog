@@ -17,6 +17,20 @@
                 </li>
             <%end%>
 
+            <!--SIDEBAR
+            <div class="sidebar">
+                <ul>
+                    <h2>Menu</h2>
+                    <li><a href="#">Ejemplo uno</a></li>
+                    <li><a href="#">E jemplo dos</a></li>
+                    <li><a href="#">Ejemplo tres</a></li>
+                </ul>
+            </div>
+
+            <div class="contenido">
+                <img src="/images/ic_menu.png" alt=""  class="menu-bar"/>
+            </div>-->
+
             <% if user_signed_in? %>
                 <li class="col-md nav-space">
                     <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>

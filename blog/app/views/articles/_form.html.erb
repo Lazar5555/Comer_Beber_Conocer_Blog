@@ -1,9 +1,11 @@
-# encoding: utf-8
 <h1><%= name %> artículo</h1>
 <%= form_for(@article, html: { id: "articles_form" }) do |f| %>
     <% @article.errors.full_messages.each do |message| %>
+        <% if message.include? "Title can't be blank" %>
+            <p class="error">El título no puede estar en blanco</p>
+        <%end%>
         <div class="be-blue white top-space">
-            * <%= message %>
+            <%= message %>
         </div>
     <%end%>
     <div class="field">

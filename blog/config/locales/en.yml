@@ -21,3 +21,18 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: can't be blank
+            email:
+              blank: "escribe una cuenta de correo."
+              invalid: is invalid
+              taken: "ya registrado, intenta con otro."
+            password:
+              confirmation: "las contraseñas no coinciden."
+              blank: "escribe una contraseña."
+              too_short: "la contraseña es muy corta (6 caracteres mínimo)."
