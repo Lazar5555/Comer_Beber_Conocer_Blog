@@ -1,12 +1,18 @@
 <body class="normal_background">
   <div class="container" style="margin: 0 auto;">
-      <h1 class="text-center font-lemonade" style="font-size: 70px; color:#b71c1c;">Artículos</h1>
+      <div class="row center-xs">
+        <div class="col-md-4">
+          <div>
+            <h1 class="articles-title font-lemonade red-letters">Artículos</h1>
+          </div>
+        </div>
+      </div>
       <div class="row">
           <%= render @articles %>
       </div>
 
-      <div class="top-space text-center">
-          <%= will_paginate @articles, :previous_label => 'Anterior...', :next_label => '...Siguiente' %>
+      <div style="margin-top: 2em;">
+          <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente', class: 'flickr_pagination font-lemonade' %>
       </div>
   </div>
 </body>

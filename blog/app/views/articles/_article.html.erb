@@ -1,16 +1,10 @@
-<div class="col-md-4 top-space">
-  <div class="Aligner box relative article-height div-box">
+<div class="col-md-4" style="margin-top: 1em;">
+  <div class="Aligner box relative article-height div-box article-radius">
       <%= link_to article, :action => 'go' do %>
-        <div class="absolute article-height background-cover" style="background:url(<%= article.cover.url(:thumb) %>); top: 0px; left: 0px; width: 100%;">
+        <div class="absolute article-height background-cover article-radius" style="background:url(<%= article.cover.url(:thumb) %>);background-repeat: no-repeat;top: 0px; left: 0px; width: 100%;">
 
         </div>
       <%end%>
-
-      <%= link_to article, :action => 'go' do %>
-        <div class="absolute article-height background-cover" style="background:rgba(191, 22, 22, 0.1); top: 0px; left: 0px; width: 100%;">
-
-        </div>
-      <% end %>
 
       <div id="text-in-box" class="relative red-letters text-center font-lemonade">
           <h2 class="text-articles"><%= link_to article.title, article %></h2>

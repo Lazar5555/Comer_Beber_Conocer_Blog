@@ -10,7 +10,7 @@ class Article < ApplicationRecord
 
     validates :title, presence: true, uniqueness: true
     validates :body, presence: true, length: {minimum: 20}
-    #validates :username, format: { with /regex/} Validar cone expresiones regulares.
+    #validates :username, format: { with /regex/} Validar con expresiones regulares.
     before_create :set_visits_count
     after_create :save_categories
     after_create :send_mail
