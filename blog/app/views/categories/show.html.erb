@@ -1,11 +1,24 @@
-<div class="container" style="margin: 0 auto;">
-    <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
+<body class="normal_background">
+  <div class="container">
+    <div class="row center-xs">
+      <div class="col-md-4">
+        <div>
+          <h1 class="articles-title font-lemonade" style="color:<%= @category.color %>;"><%= @category.name %></h1>
+        </div>
+      </div>
+    </div>
 
-    <h1 style="color:<%= @category.color %>;"><%= @category.name %></h1>
     <div class="row">
         <%= render @category.articles %>
     </div>
 
-    <%= link_to 'Edit', edit_category_path(@category) %> |
-    <%= link_to 'Back', categories_path %>
-</div>
+    <div class="top-space">
+      <% if user_signed_in? && current_user.is_admin? %>
+        <%= link_to 'Edit', edit_category_path(@category) %> |
+        <%= link_to 'Back', categories_path %>
+      <%end%>
+    </div>
+    
+  </div>
+</body>

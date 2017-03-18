@@ -1,15 +1,21 @@
 class CategoriesController < ApplicationController
+
+  include PermissionsConcern
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_editor!, only: [:new, :create, :update]
+  before_action :authenticate_admin!, only: [:destroy]
 
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all#@categories = Category.paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+
   end
 
   # GET /categories/new
